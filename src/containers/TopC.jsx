@@ -3,9 +3,8 @@ import heart from '../assets/heart.svg';
 
 const TopC = ({imgUrl,title,artist,duration}) => {
   return (
-    <>
-    <div className='flex flex-row w-[417px] h-[96px] rounded-[20px] bg-[#1A1E1F]'>
-            <div>
+    <div className='flex flex-row w-[500px] h-[110px] rounded-[20px] bg-[gray] items-center justify-between'>
+            <div className='flex flex-row gap-[15px] text-white items-center ml-4'>
                 <div>
                      <img src={ imgUrl } alt="error" />
                 </div>
@@ -15,12 +14,12 @@ const TopC = ({imgUrl,title,artist,duration}) => {
                     <p>{ duration }</p>
                 </div>
             </div>
-            <div>
-                <img src={ heart } alt="error" />
+            <div className='border-[red]'>
+                <img src={ heart } alt="error" className='p-[55px]' />
             </div>
     </div>
-    </>
   )
 }
+
 
 export default TopC

@@ -1,27 +1,30 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
-import home from '../assets/home.svg';
-import song from '../assets/song.svg';
-import radio from '../assets/radio.svg';
-import sort from '../assets/sort.svg';
-import person from '../assets/person.svg';
-
+import {MdFeaturedVideo} from 'react-icons/md';
+import {RiRadio2Fill} from 'react-icons/ri';
+import {SiApplemusic} from 'react-icons/si';
+import {AiFillHome} from 'react-icons/ai';
+import {IoMdLogOut} from 'react-icons/io';
+import {BsPersonFill} from 'react-icons/bs';
 
 
 
 const SideBar = () => {
   return (
     <div className='flex flex-col gap-[50px] w-[5%] mt-[25px]'>
-            <img src={ logo } alt='logo' className='w-[38px] ml-[25%] h-14 object-contain justify-start'/>
+      <div className='flex flex-row'>
+            <img src={ logo } alt='logo' className='w-[38px] ml-[26%] h-14 object-contain justify-start'/>
+      </div>
         <div className='md:flex flex-col w-[52px] h-[230px] rounded-[32px] ml-5 bg-[#1A1E1F] items-center'>
-            <img src={ home } alt='logo' className='w-full h-14 object-contain'/>
-            <img src={ song } alt='logo' className='w-[38px] h-14 object-contain'/>
-            <img src={ radio } alt='logo' className='w-[38px] h-14 object-contain'/>
+            <AiFillHome className='w-[35px] h-14' id='logout'/>
+            <SiApplemusic className='w-[32px] h-14' id='logout'/>
+            <RiRadio2Fill className='w-[35px] h-14' id='logout'/>
+            <MdFeaturedVideo className='w-[35px] h-14' id='logout'/>
         </div>
 
         <div className='md:flex flex-col w-[52px] h-[150px] rounded-[32px] ml-5 bg-[#1A1E1F] items-center'>
-            <img src={ person } alt='logo' className='w-[38px] h-14 object-contain'/>
-            <img src={ sort } alt='logo' className='w-[38px] h-14 object-contain decoration-[#EFEEE040]'/>
+            <BsPersonFill className='w-[35px] h-14' id='logout'/>
+            <IoMdLogOut className='w-[35px] h-14' id='logout'/>
         </div>
     </div>
   )

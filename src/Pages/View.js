@@ -1,5 +1,5 @@
 import React from 'react'
-import { SearchBar, SideBar, TopCharts, Welcome } from '../components';
+import { SearchBar, SideBar, SongCard, TopCharts, Welcome } from '../components';
 
 
 const view = () => {
@@ -8,10 +8,11 @@ const view = () => {
       <SideBar />
       <div className='flex-1 flex flex-col'>
           <SearchBar />
-          <div className='flex-1 flex flex-row items-center justify-between'>
+          <div className='flex-1 flex flex-row items-center justify-center lg:gap-[50px]'>
             <Welcome />
             <TopCharts />
           </div>
+          <SongCard />
       </div>
     </div>
   )

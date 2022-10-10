@@ -3,3 +3,14 @@ body{
     padding: 0;
     background: #1E1E1E;
 }
+
+#div{
+    background-image: url('./assets/Vector.svg');
+    background-repeat: no-repeat;
+    background-position: 250px ;
+    background-size: 800px 1000px;
+}
+
+#logout{
+    color: gray;
+}
