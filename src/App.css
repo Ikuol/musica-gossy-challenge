@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: #1E1E1E;
+    background: #1D2123;
 }
 
 #div{
@@ -13,4 +13,29 @@ body{
 
 #logout{
     color: gray;
+    cursor: pointer;
 }
+
+#logout:hover{
+    color: #FACD66;
+    transition: 500ms;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  .swiper-slide {
+   width: 12% !important;
+  }
+
+  .btn{
+    border:1px solid gray;
+    color:gray;
+  }
+
+  #bar{
+    background-color:#FACD66 !important;
+  }

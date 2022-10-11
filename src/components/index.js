@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import SongCard from './SongCard';
 import TopCharts from './TopCharts';
 import Welcome from './Welcome';
+import Collection from './Collection';
 
 export {
   SideBar,
@@ -10,4 +11,5 @@ export {
   SongCard,
   TopCharts,
   Welcome,
+  Collection,
 };

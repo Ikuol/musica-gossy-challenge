@@ -1,13 +1,12 @@
 import React from 'react';
 import photo from '../assets/photo.svg';
 import group from '../assets/Group.png';
-import heart  from '../assets/heart.svg';
 import {BsHeart} from 'react-icons/bs';
 
 const Welcome = () => {
   return (
     <>
-    <div className='flex flex-row justify-between lg:w-full h-full ml-[40px] mt-[35px] rounded-[40px] bg-[#609EAF]' id='div'>
+    <div className='flex flex-row justify-between lg:w-[950px] h-full mt-[35px] rounded-[40px] bg-[#609EAF]' id='div'>
         <div className='flex flex-col p-[50px] justify-between'>
             <div>
                 <p className='text-white font-serif text-[16px]'>Currated playlist</p>
@@ -25,7 +24,7 @@ const Welcome = () => {
                  <p className='text-white text-[15px] whitespace-nowrap'>33k Likes</p>
             </div>
         </div>
-        <div className='flex justify-end'>
+        <div data-aos="zoom-in" data-aos-duration='2000' className='flex justify-end'>
             <img src={photo} alt="error" className=''/>
         </div>
     </div>
