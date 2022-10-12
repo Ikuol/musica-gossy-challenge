@@ -9,11 +9,11 @@ const Welcome = () => {
     <div className='flex flex-row justify-between lg:w-[950px] h-full mt-[35px] rounded-[40px] bg-[#609EAF]' id='div'>
         <div className='flex flex-col p-[50px] justify-between'>
             <div>
-                <p className='text-white font-serif text-[16px]'>Currated playlist</p>
+                <p className='text-white text-[16px]'>Currated playlist</p>
             </div>
             <div className='w-[276px] h-[51px] mt-[-65px]'>
                 <h1 className='text-white font-bold text-[45px]'>R & B Hits</h1>
-                <p className='text-white text-[15px] font-sans'>All mine, Lie again, Petty call me everyday,
+                <p className='text-white text-[15px] w-[299px]'>All mine, Lie again, Petty call me everyday,
                     Out of time, No love, Bad habit,
                     and so much more
                 </p>

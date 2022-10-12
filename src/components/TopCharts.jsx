@@ -9,7 +9,7 @@ const TopCharts = () => {
   return (
     <>
         <div>
-            <div className='flex-1 flex flex-col gap-[20px]'>
+            <div className='flex-1 flex flex-col gap-[20px] mt-[30px]'>
                 <div>
                   <h1 className='text-white text-[25px] font-bold'>Top charts</h1>
                 </div>

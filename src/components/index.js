@@ -4,6 +4,7 @@ import SongCard from './SongCard';
 import TopCharts from './TopCharts';
 import Welcome from './Welcome';
 import Collection from './Collection';
+import Button from './Button';
 
 export {
   SideBar,
@@ -12,4 +13,5 @@ export {
   TopCharts,
   Welcome,
   Collection,
+  Button,
 };
