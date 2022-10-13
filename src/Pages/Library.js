@@ -1,6 +1,5 @@
 import React from 'react';
-import { SearchBar, SideBar, Collection, Button } from '../components';
-import Index from '../components/MusicPlayer';
+import { SearchBar, SideBar, Collection, Button, Index } from '../components';
 import {song1, song2, song3, song4} from '../components/imports';
 
 const Library = () => {
@@ -13,11 +12,11 @@ const Library = () => {
           <Button bgColor={'#FACD66'} Width={'200px'} Border={'none'} Color={'#1D2123'} text={'My collection'} />
           <Button bgColor={'#1D2123'} Width={'80px'} Border={'1px solid gray'} Color={'gray'} text={'Links'} />
         </div>
-        <div className='flex flex-row gap-[30px]'>
-            <Collection imgUrl={ song1 } title={'Limits'} artist={'J cole'} />
-            <Collection imgUrl={ song2 } />
-            <Collection imgUrl={ song3 } />
-            <Collection imgUrl={ song4 } />
+        <div className='flex flex-row gap-[20px]'>
+            <Collection imgUrl={ song1 } title={'Limits'} artist={'J cole'} like={'2,3k likes'}/>
+            <Collection imgUrl={ song2 } title={'Limits'} artist={'J cole'} like={'2,3k likes'}/>
+            <Collection imgUrl={ song3 } title={'Limits'} artist={'J cole'} like={'2,3k likes'}/>
+            <Collection imgUrl={ song4 } title={'Limits'} artist={'J cole'} like={'2,3k likes'}/>
         </div>
     </div>
     <Index />

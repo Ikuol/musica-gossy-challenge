@@ -1,5 +1,7 @@
 import React from 'react';
 import {AiOutlineHeart} from 'react-icons/ai';
+import { NavLink } from "react-router-dom";
+
 
 
 const TopC = ({imgUrl,title,artist,duration}) => {
@@ -10,7 +12,7 @@ const TopC = ({imgUrl,title,artist,duration}) => {
                      <img src={ imgUrl } alt="error" />
                 </div>
                 <div>
-                    <p>{ title }</p>
+                    <NavLink to='/Album'><p className='cursor-pointer'>{ title }</p></NavLink>   
                     <p className='text-[14px] text-[gray]'>{ artist }</p>
                     <p>{ duration }</p>
                 </div>

@@ -20,7 +20,7 @@ const SideBar = () => {
             <img src={ logo } alt='logo' className='w-[38px] ml-[26%] h-14 object-contain justify-start'/>
       </div>
         <div className='md:flex flex-col w-[52px] h-[270px] rounded-[32px] ml-5 bg-[#1A1E1F] items-center justify-center gap-[5px]'>
-            <NavLink to='/'><AiFillHome className={`w-[32px] h-14 ${pathname === '/'?"home":''}`} id='logout'/></NavLink> 
+            <NavLink to='/'><AiFillHome className={`w-[32px] h-14 ${pathname === '/'?"home":'' || pathname === '/Album'?"home":'' }`} id='logout'/></NavLink> 
             <NavLink to="/Library"><SiApplemusic className={`w-[29px] h-14  ${pathname === '/Library'?"home":''}`}id='logout'/></NavLink>
             <RiRadio2Fill className='w-[32px] h-14' id='logout'/>
             <MdFeaturedVideo className='w-[32px] h-14' id='logout'/>
