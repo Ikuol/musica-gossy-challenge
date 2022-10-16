@@ -1,6 +1,5 @@
 import React from 'react';
-import photo from '../assets/photo.svg';
-import group from '../assets/Group.png';
+import { photo, group } from './imports';
 import {BsHeart} from 'react-icons/bs';
 
 const Welcome = () => {

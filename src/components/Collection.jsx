@@ -5,8 +5,8 @@ import { BsFillPlayFill } from 'react-icons/bs';
 const Collection = ({imgUrl, title, artist, like}) => {
 
   return (
-        <div className='flex flex-col items-end ml-[50px] mt-[25px]'>
-          <div className='h-[300px] w-[300px]  rounded-[20px] min-w-[300px] min-h-[300px] hover:scale-110 transform transition duration-500' >
+        <div className='flex flex-col items-end lg:ml-[50px] mt-[25px]'>
+          <div className='h-[300px] w-[300px] rounded-[20px] hover:scale-110 transform transition duration-500' >
               <img src={imgUrl} alt="error" className='h-[300px] w-[300px]' />
           </div>
           <div className='flex flex-row justify-center gap-[100px] items-end mt-[-105px] z-10'>

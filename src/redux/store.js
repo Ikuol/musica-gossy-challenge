@@ -1,9 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 
-import playerReducer from './features/playerSlice';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension'; 
+ import reducers from './reducer/reducer';
 
-export const store = configureStore({
-  reducer: {
-    player: playerReducer,
-  },
-});
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
+);
+
+export default store;
