@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const SongC = ({ imgUrl, text, artist }) => {
   return (
@@ -7,10 +7,12 @@ const SongC = ({ imgUrl, text, artist }) => {
                 <img src={ imgUrl } alt="error" />
         </div>
         <div>
-            <p className='text-white text-[14px]'>{ text }</p>
+            <p className='text-white text-[14px] truncate w-[150px]'>
+              { text }
+              </p>
         </div>
         <div>
-              <p className='text-white text-[12px]'>{ artist }</p>
+              <p className='text-white text-[12px] truncate w-[100px]'>{ artist }</p>
         </div>
     </div>
   )

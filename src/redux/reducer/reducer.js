@@ -7,6 +7,7 @@ const initialState={
 }
 
 const reducers = (state= initialState, action) =>{
+    console.log(action)
     switch (action.type) {
         case SET_MUSIC:
             return {...state, music: action.payload.slice()};

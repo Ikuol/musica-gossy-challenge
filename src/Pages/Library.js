@@ -13,10 +13,10 @@ const Library = () => {
       <SearchBar />
     </div>
     <div className='flex-1 flex flex-col mt-[-10px]'>
-        <div className='hidden lg:block'>
+        <div className='hidden flex-row lg:block'>
           <SearchBar />
         </div>
-        <div className='flex flex-row mt-[40px] ml-[50px] gap-[25px]'>
+        <div className='flex flex-row mt-[40px] m-auto lg:ml-[50px] gap-[25px]'>
           <Button bgColor={'#FACD66'} Width={'200px'} Border={'none'} Color={'#1D2123'} text={'My collection'} />
           <Button bgColor={'#1D2123'} Width={'80px'} Border={'1px solid gray'} Color={'gray'} text={'Links'} />
         </div>
