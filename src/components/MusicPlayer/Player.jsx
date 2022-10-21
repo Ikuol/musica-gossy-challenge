@@ -2,6 +2,8 @@
 import React, {useState, useEffect, useRef} from "react";
 import Track from "./Track";
 import Controls from './Controls';
+import Seekbar from './Seekbar';
+
 
 
 const Player = (props) => {
@@ -24,10 +26,9 @@ const Player = (props) => {
 
           if(temp >props.songs.length - 1){
             temp = 0;
-
-            return temp;
           }
-        })
+          return temp;
+        });
       } else {
         props.setCurrentSongIndex(()=>{
           let temp = props.currentSongIndex;
@@ -35,26 +36,32 @@ const Player = (props) => {
 
           if(temp < 0){
             temp = props.songs.length - 1;
-
-            return temp;
           }
+          return temp;
         });
       }
   }
 
   return (
-    <div className='flex-1 flex items-center justify-start'>
-      <audio src={props.songs[props.currentSongIndex].src} ref={audioEl}></audio>
+    <div className="sm:px-12 px-8 w-full flex items-center justify-between">
+      <audio 
+        src={props.songs[props.currentSongIndex].src} 
+        ref={audioEl} 
+      />
       <Track 
         song={props.songs[props.currentSongIndex]}
        />
-      <Controls 
-        isPlaying={isPlaying} 
-        setIsPlaying={setIsPlaying} 
-        skipSong={skipSong} 
-      />
+      <div className="flex-1 flex flex-col items-center justify-center ml-[430px]">
+        <Controls 
+          isPlaying={isPlaying} 
+          setIsPlaying={setIsPlaying} 
+          skipSong={skipSong} 
+        />
+        <Seekbar />
+      </div>
     </div>
   );
 };
 
 export default Player;
+
