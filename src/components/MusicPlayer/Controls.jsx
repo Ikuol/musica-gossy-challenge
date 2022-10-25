@@ -14,7 +14,7 @@ const Controls = (props) => (
     )}
     
     <MdSkipNext size={30} color="#FFF" className="cursor-pointer" onClick={()=> props.skipSong()}/>
-    <BsArrowRepeat size={20} color={'white'} className="hidden sm:block cursor-pointer" />
+    <BsArrowRepeat size={20} color={'white'} className="hidden sm:block cursor-pointer" onClick={() => props.setRepeat()}/>
   </div>
 );
 
