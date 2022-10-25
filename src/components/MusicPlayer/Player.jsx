@@ -10,6 +10,7 @@ const Player = (props) => {
   const audioEl = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
+
   useEffect(() =>{
     if(isPlaying){
       audioEl.current.play();
@@ -17,6 +18,31 @@ const Player = (props) => {
       audioEl.current.pause();
     }
   });
+
+  
+  const getTime = () => {
+    if(isPlaying){
+      const time= audioEl.current.duration;
+      // const finalDuration = `${Math.floor(time / 60)}:${(`0${Math.floor(time % 60)}`).slice(-2)}`;
+      return time;
+    }
+  }
+
+  const currentTime = () => {
+    if (isPlaying) {
+      const min = audioEl.current.currentTime;
+      return min;
+    }
+  }
+  
+  const togglePlay = () =>{
+    isPlaying ? (
+      audioEl.current.loop = true
+
+    ) : (
+      audioEl.current.loop = false
+    )
+  }
 
   const skipSong = (fowards=true) => {
       if (fowards) {
@@ -50,14 +76,18 @@ const Player = (props) => {
       />
       <Track 
         song={props.songs[props.currentSongIndex]}
-       />
+        />
       <div className="flex-1 flex flex-col items-center justify-center ml-[430px]">
         <Controls 
           isPlaying={isPlaying} 
           setIsPlaying={setIsPlaying} 
           skipSong={skipSong} 
+          setRepeat={togglePlay}
         />
-        <Seekbar />
+        <Seekbar
+          getTime={getTime} 
+          min={currentTime}
+        />
       </div>
     </div>
   );
