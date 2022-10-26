@@ -1,12 +1,18 @@
 import { useState, useEffect } from 'react';
 import Player from './Player';
 import VolumeBar from './VolumeBar';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchData } from '../../redux/actions/action';
 import img from '../../assets/images.jpeg';
 import song6 from "./song6.png";
 import { music1, music2, music3, music4, music5 } from '../../music';
 
 
 const MusicPlayer = () => {
+
+    const dispatch = useDispatch();
+    useEffect(() => {dispatch(fetchData())},[])
+    let musics = useSelector((state) =>state.music);
 
   const [songs] = useState([
     {
@@ -42,7 +48,7 @@ const MusicPlayer = () => {
   ]);
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [nextSongIndex ] = useState(currentSongIndex + 1);
+  const [nextSongIndex] = useState(currentSongIndex + 1);
 
   useEffect(() => {
     setCurrentSongIndex(()=>{

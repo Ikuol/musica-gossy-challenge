@@ -1,17 +1,16 @@
 import React, {useEffect} from 'react';
-import { SongC } from '../containers';
-import { song1, song2, song3, song4, song5} from './imports';
-import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchData } from '../redux/actions/action';
+import { fetchData, fetchPopular } from '../redux/actions/action';
 
 import 'swiper/css';
 
 const SongCard = () => {
       const dispatch = useDispatch();
-      useEffect(() => {dispatch(fetchData())})
+      useEffect(() => {dispatch(fetchData())},[]);
+      useEffect(() => {dispatch(fetchPopular())},[]);
       let musics = useSelector((state) =>state.music);
+      let populars = useSelector((state) =>state.popular);
   return (  
     <div className='flex flex-col mt-10 gap-[20px] ml-[60px] w-[600px] lg:w-[1600px]'>
         <div>
@@ -29,21 +28,17 @@ const SongCard = () => {
                   <SwiperSlide key={i}>
                         <div className='flex flex-col gap-[10px]'>
                               <div className='w-[153px] h-[153px] rounded-[25px]'>
-                                    <img src={ music.images?.coverart } alt="error" />
+                                    <img src={ music.cover } alt="error" className='w-153px h-[153px]' />
                               </div>
                               <div>
-                                    <Link to={`/songs/${music?.key}`}>
-                                          <p className='text-white text-[14px] truncate w-[150px]'>
-                                          { music.title }
-                                          </p>
-                                    </Link>
+                                    <p className='text-white text-[14px] truncate w-[150px]'>
+                                    { music.title }
+                                    </p>
                               </div>
                               <div>
-                                    <Link to={music.artists ? `/artists/${music?.artists[0]?.adamid}` : '/top-artists'}>
-                                          <p className='text-white text-[12px] truncate w-[100px]'>
-                                                { music.subtitle }
-                                          </p>
-                                    </Link>
+                                    <p className='text-white text-[12px] truncate w-[100px]'>
+                                          { music.artist }
+                                    </p>
                               </div>
                         </div>
                   </SwiperSlide>
@@ -62,19 +57,27 @@ const SongCard = () => {
         centeredSlidesBounds={true}
         pagination={false}
         className="mySwiper">
-              <SwiperSlide><SongC imgUrl={ song1 } text='Life in a bubble' artist='Drake'/> </SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song2 } text='Mountains' artist='Drake'/> </SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song3 } text='Limits' artist='Drake'/> </SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song4 } text='Everythings black' artist='Drake'/> </SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song5 } text='Life in a bubble' artist='Drake'/></SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song1 } text='Nomad' artist='Drake'/> </SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song2 } text='Mountains' artist='Drake'/> </SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song3 } text='Limits' artist='Drake'/> </SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song4 } text='Everythings black' artist='Drake'/> </SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song5 } text='Nomad' artist='Drake'/></SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song5 } text='Nomad' artist='Drake'/></SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song5 } text='Nomad' artist='Drake'/></SwiperSlide>
-              <SwiperSlide><SongC imgUrl={ song5 } text='Nomad' artist='Drake'/></SwiperSlide>
+
+            {populars?.length > 0 ? (populars.map((popular,i)=>(
+                  <SwiperSlide key={i}>
+                        <div className='flex flex-col gap-[10px]'>
+                              <div className='w-[153px] h-[153px] rounded-[25px]'>
+                                    <img src={ popular.cover } alt="error" className='w-153px h-[153px]' />
+                              </div>
+                              <div>
+                                    <p className='text-white text-[14px] truncate w-[150px]'>
+                                    { popular.title }
+                                    </p>
+                              </div>
+                              <div>
+                                    <p className='text-white text-[12px] truncate w-[100px]'>
+                                          { popular.artist }
+                                    </p>
+                              </div>
+                        </div>
+                  </SwiperSlide>
+            ))):null };
+
           </Swiper>
     </div>
   )

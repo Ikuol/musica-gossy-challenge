@@ -71,7 +71,7 @@ const Player = (props) => {
   return (
     <div className="sm:px-12 px-8 w-full flex items-center justify-between">
       <audio 
-        src={props.songs[props.currentSongIndex].src} 
+        src={props.songs[props.currentSongIndex].audio} 
         ref={audioEl} 
       />
       <Track 
