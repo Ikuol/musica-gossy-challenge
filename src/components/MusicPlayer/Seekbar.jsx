@@ -5,15 +5,13 @@ const Seekbar = (props) => {
 
   return (
     <div className="hidden sm:flex flex-row items-center">
-      <p className="text-white">{props.getTime()}</p>
+      <p className="text-white"></p>
       <input
         type="range"
         step="any"
-        min={props.min()}
-        max={props.getTime()}
         className="md:block w-24 md:w-56 2xl:w-96 h-1 mx-4 2xl:mx-6 rounded-lg"
       />
-      <p className="text-white">{props.min()}</p>
+      <p className="text-white"></p>
     </div>
   );
 };

@@ -1,76 +1,57 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Player from './Player';
-import VolumeBar from './VolumeBar';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchData } from '../../redux/actions/action';
-import img from '../../assets/images.jpeg';
-import song6 from "./song6.png";
-import { music1, music2, music3, music4, music5 } from '../../music';
 
 
 const MusicPlayer = () => {
 
-    const dispatch = useDispatch();
-    useEffect(() => {dispatch(fetchData())},[])
-    let musics = useSelector((state) =>state.music);
+    const [songs, setSongs] = useState([
+      {
+        id: "popular-3",
+        artist: "Burna Boy",
+        title: "Last Last",
+        cover: "https://musica-api.up.railway.app/cover/cover_13.jpg",
+        audio: "https://musica-api.up.railway.app/audio/audio_13.mp3",
+      },
+      {
+        id: "popular-4",
+        artist: "Kizz Daniel ft Tekno",
+        title: "Buga",
+        cover: "https://musica-api.up.railway.app/cover/cover_14.jpeg",
+        audio: "https://musica-api.up.railway.app/audio/audio_14.mp3",
+      },
+    ]);
 
-  const [songs] = useState([
-    {
-      title:'Question',
-      artist:'Burna Boy ft Don jazzy',
-      img_src:`${img}`,
-      src:`${music1}`
-    },
-    {
-      title:'Want it all',
-      artist:'Burna Boy ft Polo G',
-      img_src:`${img}`,
-      src:`${music2}`
-    },
-    {
-      title:'Easy On Me',
-      artist:'Adele',
-      img_src:`${song6}`,
-      src:`${music3}`
-    },
-    {
-      title:'Crazy Things',
-      artist:'Tems',
-      img_src:`${img}`,
-      src:`${music4}`
-    },
-    {
-      title:'Save Your Tears',
-      artist:'The weeknd',
-      img_src:`${img}`,
-      src:`${music5}`
-    },
-  ]);
+    const [songsClone, setSongsClone] = useState([
+      {
+        id: "popular-3",
+        artist: "Kizz Daniel ft Tekno",
+        title: "Buga",
+        cover: "https://musica-api.up.railway.app/cover/cover_13.jpg",
+        audio: "https://musica-api.up.railway.app/audio/audio_13.mp3",
+      },
+      {
+        id: "popular-4",
+        artist: "Burna Boy",
+        title: "Last Last",
+        cover: "https://musica-api.up.railway.app/cover/cover_14.jpeg",
+        audio: "https://musica-api.up.railway.app/audio/audio_14.mp3",
+      },
+    ]);
 
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [nextSongIndex] = useState(currentSongIndex + 1);
-
-  useEffect(() => {
-    setCurrentSongIndex(()=>{
-      if(currentSongIndex + 1 > songs.length - 1){
-          return 0;
-      } else {
-        return currentSongIndex + 1;
-      }
-    })
-  },[])
+  const [currentSong, setCurrentSong] = useState(songs[0]);
 
   return (
     <div className="sm:px-12 px-8 w-full h-[140px] flex bg-[gray]/30 fixed bottom-0 z-50 backdrop-blur-sm">
       <div className="flex-1 flex flex-col items-center justify-center">
         <Player
-            currentSongIndex={currentSongIndex}
-            setCurrentSongIndex={setCurrentSongIndex}
-            nextSongIndex={nextSongIndex}
+            currentSong={currentSong}
+            setCurrentSong={setCurrentSong}
             songs={songs}
+            setSongs={setSongs}
+            songsClone={songsClone}
+            setClone={setSongsClone}
          />
       </div>
-      <VolumeBar />
     </div>
   );
 };

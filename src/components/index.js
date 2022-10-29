@@ -7,7 +7,7 @@ import Collection from './Collection';
 import Button from './Button';
 import Presentation from './Presentation';
 import TrackIn from './TrackIn';
-import Index from './MusicPlayer/index';
+import Index from './MusicPlayer/Player';
 
 export {
   SideBar,
