@@ -19,6 +19,14 @@ const MusicPlayer = () => {
         cover: "https://musica-api.up.railway.app/cover/cover_14.jpeg",
         audio: "https://musica-api.up.railway.app/audio/audio_14.mp3",
       },
+      {
+        id:"new-2",
+        artist:"Ayra Starr",
+        duration:"3:05",
+        title:"Rush",
+        cover:"https://musica-api.up.railway.app/cover/cover_2.jpeg",
+        audio:"https://musica-api.up.railway.app/audio/audio_2.mp3",
+      },
     ]);
 
     const [songsClone, setSongsClone] = useState([
@@ -35,6 +43,14 @@ const MusicPlayer = () => {
         title: "Last Last",
         cover: "https://musica-api.up.railway.app/cover/cover_14.jpeg",
         audio: "https://musica-api.up.railway.app/audio/audio_14.mp3",
+      },
+      {
+        id:"new-2",
+        artist:"Ayra Starr",
+        duration:"3:05",
+        title:"Rush",
+        cover:"https://musica-api.up.railway.app/cover/cover_2.jpeg",
+        audio:"https://musica-api.up.railway.app/audio/audio_2.mp3",
       },
     ]);
 

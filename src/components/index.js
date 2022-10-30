@@ -7,6 +7,7 @@ import Collection from './Collection';
 import Button from './Button';
 import Presentation from './Presentation';
 import TrackIn from './TrackIn';
+import SongC from './SongC';
 import Index from './MusicPlayer/Player';
 
 export {
@@ -19,5 +20,6 @@ export {
   Button,
   Presentation,
   TrackIn,
+  SongC,
   Index,
 };

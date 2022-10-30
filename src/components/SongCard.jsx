@@ -11,6 +11,7 @@ const SongCard = () => {
       useEffect(() => {dispatch(fetchPopular())},[]);
       let musics = useSelector((state) =>state.music);
       let populars = useSelector((state) =>state.popular);
+      
   return (  
     <div className='flex flex-col mt-10 gap-[20px] ml-[60px] w-[600px] lg:w-[1600px]'>
         <div>
@@ -18,15 +19,15 @@ const SongCard = () => {
         </div>
         <div className='flex flex-row gap-[20px]'>
         <Swiper  
-        grabCursor={true}
-        slidesPerView={"auto"}
-        centeredSlides={true}
-        centeredSlidesBounds={true}
-        pagination={false}
-        className="mySwiper">
+            grabCursor={true}
+            slidesPerView={"auto"}
+            centeredSlides={true}
+            centeredSlidesBounds={true}
+            pagination={false}
+            className="mySwiper">
             {musics?.length > 0 ? (musics.map((music,i)=>(
                   <SwiperSlide key={i}>
-                        <div className='flex flex-col gap-[10px]'>
+                        <div className='flex flex-col gap-[10px] cursor-pointer'>
                               <div className='w-[153px] h-[153px] rounded-[25px]'>
                                     <img src={ music.cover } alt="error" className='w-153px h-[153px]' />
                               </div>
@@ -51,16 +52,16 @@ const SongCard = () => {
         </div>
 
         <Swiper  
-        grabCursor={true}
-        slidesPerView={"auto"}
-        centeredSlides={true}
-        centeredSlidesBounds={true}
-        pagination={false}
-        className="mySwiper">
+            grabCursor={true}
+            slidesPerView={"auto"}
+            centeredSlides={true}
+            centeredSlidesBounds={true}
+            pagination={false}
+            className="mySwiper">
 
             {populars?.length > 0 ? (populars.map((popular,i)=>(
                   <SwiperSlide key={i}>
-                        <div className='flex flex-col gap-[10px]'>
+                        <div className='flex flex-col gap-[10px] cursor-pointer'>
                               <div className='w-[153px] h-[153px] rounded-[25px]'>
                                     <img src={ popular.cover } alt="error" className='w-153px h-[153px]' />
                               </div>

@@ -2,15 +2,17 @@
 import React, {useState, useEffect, useRef} from "react";
 import Track from "./Track";
 import Controls from './Controls';
-import { GiSpeaker } from 'react-icons/gi';
+import VolumeBar from './VolumeBar';
 
 
 
 const Player = (props) => {
+  
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false); //to know if a song is playing or not
   const [repeatSong, setRepeatSong] = useState(false); //to know if to repeat a song if it has finished
   const [isOnShuffle, setIsOnShuffle] = useState(false); //to know if shuffle is on
+  const [value, setValue] = useState(1/2); 
 
   const seekRef = useRef();
   const volumeRef = useRef();
@@ -101,9 +103,23 @@ const Player = (props) => {
   const handleVolume = (e) => {
     const max = 100;
     const clickedPoint = e.target.valueAsNumber;
-
+    
     audioRef.current.volume = clickedPoint / max;
+
+    if(audioRef.current.volume === 0){
+      setValue (0);
+    }
+
+    if(audioRef.current.volume <= 0.5 && audioRef.current.volume > 0){
+      setValue(1/2);
+    }
+
+    if(audioRef.current.volume === 1){
+      setValue (1);
+    }
+    
   };
+  
 
   return (
     <div className="sm:px-12 px-8 w-full flex items-center justify-between">
@@ -115,7 +131,7 @@ const Player = (props) => {
       <Track 
         song={props.currentSong}
       />
-      <div className="flex flex-col items-center justify-center ml-[430px]">
+      <div className="flex flex-col items-center justify-center">
         <Controls 
           isPlaying={isPlaying} 
           setIsPlaying={setIsPlaying} 
@@ -126,9 +142,9 @@ const Player = (props) => {
           repeatSong={repeatSong}
           setRepeat={setRepeatSong}
         />
-        
+
         {/* seekBar */}
-        <div className="hidden md:block relative mt-[31px] w-full h-fit">
+        <div className="hidden md:block relative mt-[31px] w-full h-fit cursor-pointer">
           <div
             ref={seekTrackRef}
             onClick={(e) => setProgress(e)}
@@ -149,20 +165,11 @@ const Player = (props) => {
         </div>
       </div>
 
-      {/* VolumeBar */}
-      <div className="hidden md:flex items-center h-fit w-[15%] lg:ml-[30%]">
-        <label htmlFor="volume">
-          <GiSpeaker className="text-white mr-[2.5px]" />
-        </label>
-        <input
-          ref={volumeRef}
-          onChange={(e) => handleVolume(e)}
-          className="volume w-[160px] mb-[4px]"
-          type="range"
-          name="volume"
-        />
-      </div>
-
+      <VolumeBar 
+          volumeRef={volumeRef}
+          handleVolume={handleVolume}
+          value = {value}
+      />
     </div>
   );
 };

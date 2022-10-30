@@ -22,7 +22,7 @@ const Controls = (props) => (
     {props.repeatSong ? (
       <BsArrowRepeat size={20} color={'white'} className="hidden sm:block cursor-pointer bg-[#FACD66]" onClick={() => props.setRepeat(false)}/>
     ) : (
-      <BsArrowRepeat size={20} color={'white'} className="hidden sm:block cursor-pointer" onClick={() => props.setRepeat()}/>
+      <BsArrowRepeat size={20} color={'white'} className="hidden sm:block cursor-pointer" onClick={() => props.setRepeat(true)}/>
     )}
   </div>
 );
