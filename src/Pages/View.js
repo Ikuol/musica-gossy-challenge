@@ -1,6 +1,5 @@
 import React from 'react';
 import { SearchBar, SideBar, SongCard, TopCharts, Welcome } from '../components';
-import Index from '../components/MusicPlayer';
 
 
 const view = () => {
@@ -18,9 +17,10 @@ const view = () => {
             <Welcome />
             <TopCharts />
           </div>
-          <SongCard />
+          <SongCard url={'new'} title={'New releases.'}/>
+          <SongCard url={'popular'} title={'Popular in your area.'}/>
       </div>
-      <Index />
+      {/* <Index /> */}
     </div>
   )
 }

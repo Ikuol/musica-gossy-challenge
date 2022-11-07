@@ -1,9 +1,13 @@
 import React from 'react';
 import { BsFillVolumeUpFill, BsVolumeDownFill, BsFillVolumeMuteFill } from 'react-icons/bs';
+import {TbMicrophone2} from 'react-icons/tb';
+import { NavLink } from 'react-router-dom';
 
 const VolumeBar = (props) => (
   <div className="hidden lg:flex flex-1 items-center justify-end">
-    
+    <NavLink to={`/Lyrics/${props.currentSong.id}`}>
+      <TbMicrophone2 size={17} color="#FFF" className='cursor-pointer' />
+    </NavLink>
     {props.value === 1 && <BsFillVolumeUpFill size={25} color="#FFF" />}
     {props.value === 0.5 && <BsVolumeDownFill size={25} color="#FFF" />}
     {props.value === 0 && <BsFillVolumeMuteFill size={25} color="#FFF" />}

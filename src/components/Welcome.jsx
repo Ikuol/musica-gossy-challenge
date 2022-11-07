@@ -5,7 +5,7 @@ import {BsHeart} from 'react-icons/bs';
 const Welcome = () => {
   return (
     <>
-    <div className='flex flex-row justify-between lg:w-[950px] h-full mt-[35px] rounded-[40px] bg-[#609EAF]' id='div'>
+    <div className='flex flex-row justify-between lg:w-[950px] h-full mt-[10px] rounded-[40px] bg-[#609EAF]' id='div'>
         <div className='flex flex-col p-[50px] justify-between'>
             <div>
                 <p className='text-white text-[16px]'>Currated playlist</p>

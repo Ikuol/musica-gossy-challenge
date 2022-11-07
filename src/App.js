@@ -1,16 +1,22 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
-import { View, Library, Album } from './Pages';
+import { View, Library, Album, Lyrics } from './Pages';
+import { Index } from './components';
 import './App.css';
 
 const App = () => {
   return (
     <div>
- <Routes>
-    <Route path='/' element={<View />}/>
-    <Route path='/Library' element={<Library />}/>
-    <Route path='/Album/:i' element={<Album />}/>
- </Routes>
+      <div>
+        {/* Router */}
+        <Routes>
+            <Route path='/' element={<View />}/>
+            <Route path='/Library' element={<Library />}/>
+            <Route path='/Album/:i' element={<Album />}/>
+            <Route path='/Lyrics/:i' element={<Lyrics />}/>
+        </Routes>
+      </div>
+      <Index />
     </div>
   )
 }

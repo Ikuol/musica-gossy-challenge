@@ -1,17 +1,30 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect, useRef, useContext} from "react";
 import Track from "./Track";
 import Controls from './Controls';
 import VolumeBar from './VolumeBar';
+import { songsContext } from "../../context/context";
 
 
 
 const Player = (props) => {
-  
-  const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false); //to know if a song is playing or not
-  const [repeatSong, setRepeatSong] = useState(false); //to know if to repeat a song if it has finished
-  const [isOnShuffle, setIsOnShuffle] = useState(false); //to know if shuffle is on
+
+  const {
+    currentSong,
+    isPlaying,
+    setIsPlaying,
+    getNextSong,
+    getPreviousSong,
+    repeatSong,
+    setRepeatSong,
+    audioRef,
+    isOnShuffle,
+    setIsOnShuffle,
+    getTheLyrics,
+    // reset,
+    // setReset,
+  } = useContext(songsContext);
+
   const [value, setValue] = useState(1/2); 
 
   const seekRef = useRef();
@@ -25,51 +38,7 @@ const Player = (props) => {
     } else {
       audioRef.current.pause();
     }
-  },[isPlaying, audioRef, props.currentSong]);
-
-  //play next song this runs when a song finishes or we click the next button
-  const getNextSong = (id) => {
-    if (isOnShuffle) {
-      shufflesong();
-    } else {
-      const songIndex = props.songs.findIndex((song) => song.id === id);
-      const nextSongIndex = songIndex + 1;
-      if (repeatSong) {
-        props.setCurrentSong(props.songs[songIndex]);
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
-      } else {
-        if (nextSongIndex > props.songs.length - 1) {
-          props.setCurrentSong(props.songs[0]);
-        } else {
-          props.setCurrentSong(props.songs[nextSongIndex]);
-        }
-      }
-    }
-  };
-
-  //to play previous song
-  const getPreviousSong = (id) => {
-    const songIndex = props.songs.findIndex((song) => song.id === id);
-    const prevSongIndex = songIndex - 1;
-    if (repeatSong) {
-      props.setCurrentSong(props.songs[songIndex]);
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
-    } else {
-      if (prevSongIndex < 0) {
-        props.setCurrentSong(props.songs[props.songs.length - 1]);
-      } else {
-        props.setCurrentSong(props.songs[prevSongIndex]);
-      }
-    }
-  };
-
-  //when the shuffle is on, we can get random songs with this function
-  const shufflesong = () => {
-    const randomSongIndex = Math.round(Math.random() * props.songs.length);
-    props.setCurrentSong(props.songs[randomSongIndex]);
-  };
+  },[isPlaying, audioRef, currentSong]);
 
   const setSeek = () => {
     seekRef.current.style.width =
@@ -81,11 +50,11 @@ const Player = (props) => {
   };
 
   const setNextSong = () => {
-    getNextSong(props.currentSong.id);
+    getNextSong(currentSong.id);
   };
 
   const setPrevSong = () => {
-    getPreviousSong(props.currentSong.id);
+    getPreviousSong(currentSong.id);
   };
 
   const handleShuffle = () => {
@@ -125,7 +94,7 @@ const Player = (props) => {
     <div className="sm:px-12 px-8 w-full flex items-center justify-between">
       <audio 
           ref={audioRef}
-          src={props.currentSong?.audio}
+          src={currentSong?.audio}
           onTimeUpdate={setSeek} 
       />
       <Track 
@@ -169,6 +138,8 @@ const Player = (props) => {
           volumeRef={volumeRef}
           handleVolume={handleVolume}
           value = {value}
+          getLyrics = {getTheLyrics}
+          currentSong = {currentSong}
       />
     </div>
   );

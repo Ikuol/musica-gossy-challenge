@@ -8,7 +8,7 @@ import Button from './Button';
 import Presentation from './Presentation';
 import TrackIn from './TrackIn';
 import SongC from './SongC';
-import Index from './MusicPlayer/Player';
+import Index from './MusicPlayer/index';
 
 export {
   SideBar,

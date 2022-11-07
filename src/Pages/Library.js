@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchBar, SideBar, Collection, Button, Index } from '../components';
+import { SearchBar, SideBar, Collection, Button } from '../components';
 import {song1, song2, song3, song4} from '../components/imports';
 
 const Library = () => {
@@ -27,7 +27,6 @@ const Library = () => {
             <Collection imgUrl={ song4 } title={'Limits'} artist={'J cole'} like={'2,3k likes'}/>
         </div>
     </div>
-      <Index />
   </div>
   )
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSongsContext } from '../context/context';
-const SongC = (music) => {
-    const { getSongToPlay } = useSongsContext();
+import React, {useContext} from 'react';
+import { songsContext } from '../context/context';
+const SongC = ({music}) => {
+    const { getSongToPlay } = useContext(songsContext);
   return (
     <div onClick={() => getSongToPlay(music.id)} className='flex flex-col gap-[10px] cursor-pointer'>
             <div className='w-[153px] h-[153px] rounded-[25px]'>
