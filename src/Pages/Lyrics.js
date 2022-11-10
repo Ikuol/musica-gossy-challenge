@@ -14,7 +14,7 @@ const Lyrics = () => {
 
     useEffect(()=>{
       getTheLyrics(currentSong.artist,currentSong.title)
-    },[])
+    })
 
   return (
 

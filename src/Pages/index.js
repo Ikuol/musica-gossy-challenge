@@ -7,5 +7,5 @@ export{
     View,
     Library,
     Album,
-    Lyrics
+    Lyrics,
 }

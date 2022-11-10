@@ -10,7 +10,7 @@ const Presentation = ({imgUrl, title, description, duration}) => {
             <div className='flex flex-col'>
                 <div className='flex flex-col gap-[20px] mb-[50px]'>
                     <h1 className='text-[#A4C7C6] text-[35px] leading-[42px] font-[700]'>{ title }</h1>
-                    <p className='text-white leading-[16.8px] font-[400]'>{ description }</p>
+                    <p className='text-white leading-[16.8px] font-[400] w-[800px]'>{ description }</p>
                     <p className='text-white leading-[16.8px] font-[400]'>{ duration }</p>
                 </div>
                 <div className='flex flex-row gap-[15px]'>
@@ -24,11 +24,3 @@ const Presentation = ({imgUrl, title, description, duration}) => {
 }
 
 export default Presentation
-
-
-
-// height: 288.9700012207031px;
-// width: 284px;
-// left: 97px;
-// top: 96px;
-// border-radius: 35.17028045654297px;

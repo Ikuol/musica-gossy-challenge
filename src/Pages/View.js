@@ -18,9 +18,9 @@ const view = () => {
             <TopCharts />
           </div>
           <SongCard url={'new'} title={'New releases.'}/>
+          {/* geo.ipify.org/docs : api for songs in my area */}
           <SongCard url={'popular'} title={'Popular in your area.'}/>
       </div>
-      {/* <Index /> */}
     </div>
   )
 }
