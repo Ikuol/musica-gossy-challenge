@@ -28,11 +28,7 @@ const SideBar = () => {
                 className={
                   `w-[32px]
                    h-14 
-                   ${
-                      pathname === '/'?"home":'' || 
-                      pathname === '/Album/:i'?"home":'' ||
-                      pathname === '/Lyrics/:i'?"home":'' 
-                    }`
+                   ${pathname === '/'?"home":'' || pathname === '/Album/:chartId'?"home":'' || pathname === '/Lyrics/:i'?"home":'' }`
                 } 
                 id='logout'
               />

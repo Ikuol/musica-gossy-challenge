@@ -1,6 +1,5 @@
 import React, {useContext,useEffect} from 'react';
 import { SideBar,SearchBar } from '../components';
-import { useParams } from 'react-router-dom';
 import { songsContext } from '../context/context';
 
 const Lyrics = () => {
@@ -9,8 +8,6 @@ const Lyrics = () => {
         getTheLyrics,
         Lyrics,
     } = useContext(songsContext);
-
-    currentSong.id = useParams();
 
     useEffect(()=>{
       getTheLyrics(currentSong.artist,currentSong.title)
