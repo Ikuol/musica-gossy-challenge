@@ -15,7 +15,7 @@ const TopCharts = () => {
 
   useEffect(() => {
     axios
-      .get("https://musica-api.up.railway.app/playlist")
+      .get("https://imusic-api-production-d8ef.up.railway.app/albums")
       .then((res) => {
         setCharts(res.data);
         addChartsToSongs(res.data);
@@ -32,7 +32,7 @@ const TopCharts = () => {
                 <div>
                   <h1 className='text-white text-[25px] font-bold'>Top charts</h1>
                 </div>
-                {charts?.length > 0 ? (charts.slice(1,4).map((chart,i)=>(
+                {charts?.length > 0 ? (charts.map((chart,i)=>(
                     <div className='flex flex-row w-[550px] h-[110px] rounded-[20px] bg-[#1A1E1F] items-center justify-between mr-[90px]' key={i}>
                       <div className='flex flex-row gap-[15px] text-white items-center ml-4'>
                           <div>

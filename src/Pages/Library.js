@@ -8,10 +8,6 @@ const Library = () => {
       <div className='hidden lg:block'>
         <SideBar />
       </div>
-    <div className='flex lg:hidden flex-row justify-between p-[20px] items-baseline'>
-      <SideBar />
-      <SearchBar />
-    </div>
     <div className='flex-1 flex flex-col mt-[-10px]'>
         <div className='hidden flex-row lg:block'>
           <SearchBar />

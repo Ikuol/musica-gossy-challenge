@@ -26,7 +26,7 @@ const SearchBar = () => {
                     />
             </div>
 
-            <div className="text-white absolute top-[75px] left-[175px] max-h-[300px] overflow-hidden bg-[gray]/30 backdrop-blur-sm">
+            <div className="text-white absolute top-[75px] left-[75px] max-h-[300px] overflow-hidden bg-[gray]/30 backdrop-blur-sm">
               {searchedSong &&
                 searchedSong.map((song, index) => (
                   <SearchedSong song={song} key={index} />

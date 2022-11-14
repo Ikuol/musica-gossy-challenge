@@ -29,7 +29,7 @@ const TrackIn = ({ playlist, index }) => {
             </div>
 
             <div>
-                <p className='text-white w-[200px] h-[14px] leading-[14.4px]'>{ playlist && playlist.artist }</p>
+                <p className='text-white w-[200px] h-[14px] leading-[14.4px]'>{ playlist && playlist.title }</p>
             </div>
             <div>
                 <p className='text-white w-[34px] h-[14px] leading-[14.4px]'>{ 'Single' }</p>
