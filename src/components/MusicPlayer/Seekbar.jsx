@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const Seekbar = (props) => {
+const Seekbar = props => {
   // converts the time to format 0:00
 
   return (

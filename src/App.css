@@ -1,63 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@200;300;400;500;600;700;800&display=swap');
-body{
-    margin: 0;
-    padding: 0;
-    background: #1D2123;
-  }
-  
-  p, h1,h3{
-    font-family: 'Quicksand', sans-serif;
-  }
-
-#div{
-    background-image: url('./assets/Vector.svg');
-    background-repeat: no-repeat;
-    background-position: 250px ;
-    background-size: 800px 1000px;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@200;300;400;500;600;700;800&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background: #1d2123;
 }
 
-#logout{
-    color: gray;
-    cursor: pointer;
+p,
+h1,
+h3 {
+  font-family: "Quicksand", sans-serif;
 }
 
-#logout:hover{
-    color: #FACD66;
-    transition: 500ms;
+#div {
+  background-image: url("./assets/Vector.svg");
+  background-repeat: no-repeat;
+  background-position: 250px;
+  background-size: 800px 1000px;
+}
+
+#logout {
+  color: gray;
+  cursor: pointer;
+}
+
+#logout:hover {
+  color: #facd66;
+  transition: 500ms;
 }
 
 .swiper {
-    width: 100%;
-    height: 100%;
-  }
-  
-  
-  .swiper-slide {
-   width: 12% !important;
-  }
-
-  .btn{
-    border:1px solid gray;
-    color:gray;
-  }
-
-  #bar{
-    background-color:#FACD66 !important;
-  }
-
-  .home{
-    color:#FACD66 !important;
-  }
-
-  @media screen and (max-width: 1024px) {
-    #id1{
-        flex-direction: column;
-    }
+  width: 100%;
+  height: 100%;
 }
-  
 
-  @media screen and (max-width: 550px) {
-      .swiper-wrapper{
-          gap: 120px;
-      }
+.swiper-slide {
+  width: 12% !important;
+}
+
+.btn {
+  border: 1px solid gray;
+  color: gray;
+}
+
+#bar {
+  background-color: #facd66 !important;
+}
+
+.home {
+  color: #facd66 !important;
+}
+
+@media screen and (max-width: 1024px) {
+  #id1 {
+    flex-direction: column;
   }
+}
+
+@media screen and (max-width: 550px) {
+  .swiper-wrapper {
+    gap: 120px;
+  }
+}

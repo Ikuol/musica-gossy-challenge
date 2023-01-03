@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const Button = ({bgColor, Width, Border, Color, text}) => {
+const Button = ({ bgColor, Width, Border, text, className, onClick }) => {
   return (
     <div>
-        <button className='rounded-[27px] h-[57px]' style={{ background: `${bgColor}`, width:`${Width}`, border:`${Border}`, color:`${Color}`}}>{text}</button>
+      <button
+        className={className}
+        style={{
+          background: `${bgColor}`,
+          width: `${Width}`,
+          border: `${Border}`
+        }}
+        onClick={onClick}
+      >
+        {text}
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

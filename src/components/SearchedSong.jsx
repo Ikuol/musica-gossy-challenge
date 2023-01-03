@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { songsContext } from "../context/context";
 
 const SearchedSong = ({ song }) => {
@@ -16,8 +16,7 @@ const SearchedSong = ({ song }) => {
     >
       <img className="w-[40px] h-[40px] mr-[10px]" src={song.cover} alt={"asae"} />
       <h1>
-        <span className="font-bold">{song.artist}</span> -{" "}
-        <span>{song.title}</span>
+        <span className="font-bold">{song.artist}</span> - <span>{song.title}</span>
       </h1>
     </div>
   );
